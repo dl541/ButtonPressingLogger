@@ -1,0 +1,39 @@
+#:kivy 1.0.9
+
+<SingleButtonMode>:
+	orientation: "vertical"
+	
+	BoxLayout:
+		size_hint:0.7,1
+		pos_hint:{"center_x":0.5,"center_y":0.5}
+		
+		StartStopButton:
+			start:False
+			text:"Start"
+			on_release:self.start_logging()
+			
+		Button:
+			text:"Quit"
+			on_press:app.stop()
+
+		
+	
+	BoxLayout:	
+		orientation:"horizontal"
+		LoggingButton:
+			name:"LeftButton"
+			text:'Left'
+			size_hint:0.2,0.5
+			on_press:self.log_press()
+			on_release:self.log_release()
+			
+		LoggingButton:
+			name:"RightButton"
+			text:'Right'
+			size_hint:0.2,0.5
+			on_press:self.log_press()
+			on_release:self.log_release()		
+
+		
+
+		
